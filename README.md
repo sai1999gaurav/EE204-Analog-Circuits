@@ -1,2 +1,2 @@
 # EE204-Analog-Circuits
-Spice Simulations
+Spice Simulations, Fall 2019
