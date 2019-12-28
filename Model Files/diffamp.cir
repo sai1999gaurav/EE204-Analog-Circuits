@@ -1,0 +1,20 @@
+Simulation for the differential amplifier part 1
+.include ald1106.m
+vdd 1 0 4.5v
+vss 9 0 -4.5v
+vin1 4 0 ac sin(0 20mV 1k 0 0)
+vin2 5 0 dc 0V
+rd1 1 2 9.8k
+rd2 1 3 9.8k
+r 1 7 6.8k
+xm1 2 4 6 9 ald1106
+xm2 3 5 6 9 ald1106
+xm3 6 7 9 9 ald1106
+xm4 7 7 9 9 ald1106
+.tran 0.01ms 8ms
+.control
+run
+plot v(2)-v(3) v(4)-v(5)
+hardcopy plot_part1.eps v(2)-v(3) v(4)-v(5)
+.endc
+.end

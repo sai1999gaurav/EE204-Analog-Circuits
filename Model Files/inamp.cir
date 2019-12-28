@@ -1,0 +1,24 @@
+inamp
+.include lm324.txt
+x1 1 2 3 4 5 LM324
+x2 6 7 3 4 8 LM324
+x3 9 10 3 4 11 LM324
+vdd 3 0 15v
+vss 4 0 0v
+Vin 1 0 ac sin(0 0.1 1k 0 0)
+r1 2 7 1k
+r21 2 5 2k
+r22 7 8 2k
+r31 5 10 1k
+r32 8 9 1k
+r41 10 11 1k
+r42 9 0 1k
+v 7 0 0
+.tran 0.01ms 4ms
+.control
+run 
+plot V(2) V(11)
+.endc
+.end
+
+ 
