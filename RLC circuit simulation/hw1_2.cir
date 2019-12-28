@@ -1,0 +1,12 @@
+q1.1
+v 1 0 dc pulse(0 1 0 0 0 100u)
+r 3 0 1k
+l 2 3 1m
+c 1 2 10n
+.tran 0.1us 100us
+.control
+run
+plot v(3)/1000
+hardcopy q1_2 v(3)/1000
+.endc
+.end

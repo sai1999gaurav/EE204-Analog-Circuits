@@ -1,0 +1,31 @@
+*CSCD Amplifier
+.include tsmc.txt
+Rs 3 0 10k
+*Source bypass resistor
+*Cs 3 0 10u
+M1 4 2 3 3 CMOSN W=10u
+Rd 4 5 20k
+VDD 5 0 DC 59V
+VGG 1 0 DC 3.8V
+Vin 2 1 SIN(0 10m 1k)
+
+.tran 0.05m 2m
+*defining the run-time control functions
+*.dc VDD 0 10 0.05 VGG 0 5 1
+*.dc VGG 0 5 0.2 VDD 0 5 5
+
+*.dc VDD 0 10 0.05
+.control
+run
+*plotting input and output voltages
+*plot -I(vdd)
+*plot deriv(-I(vdd))/0.2
+*plot I(vgg) vs v(1)
+*plot v(4)
+*plot v(3)
+*plot v(2)-v(1)
+*plot v(3) vs v(2)
+*plot v(4) vs v(2)
+.endc
+.end
+

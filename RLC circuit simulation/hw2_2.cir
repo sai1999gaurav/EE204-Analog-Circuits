@@ -1,0 +1,13 @@
+q1.1
+v 1 0 sin(0 1 100k -2.5us 0)
+r 3 0 1k
+l 2 3 1m
+c 1 2 10n
+.tran 0.001us 100us
+.control
+run
+plot v(2)/1000
+hardcopy q2_2 v(2)/1000
+.endc
+.end
+

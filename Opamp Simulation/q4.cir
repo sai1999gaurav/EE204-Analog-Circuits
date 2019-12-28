@@ -1,0 +1,20 @@
+*q4
+.include tsmc.txt
+vdd 1 0 5v
+vss 9 0 -5v
+mr 7 7 1 1 CMOSP W=10m
+l1 1 13 2.533m
+c1 1 13 10u
+l2 1 14 2.533m
+c2 1 14 10u
+m1 13 14 6 9 CMOSN W=10u
+m2 14 13 6 9 CMOSN W=10u
+m3 6 7 9 9 CMOSN W=5m
+m4 7 7 9 9 CMOSN W=5m
+.tran 0.01ms 5ms
+.control
+run
+plot  v(14)-5
+hardcopy q4 v(14)-5
+.endc
+.end

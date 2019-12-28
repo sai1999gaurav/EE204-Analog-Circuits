@@ -1,0 +1,14 @@
+q1.1
+r 1 2 0
+r1 2 3 1k
+c1 3 0 10n
+vin 1 0 dc 0 ac 1
+.ac dec 10 1 1Meg
+.control
+run
+plot vdb(2) xlog
+plot vp(2) xlog
+.endc
+.end
+
+https://streamcherry.com/embed/bsfksrspbsraamlr

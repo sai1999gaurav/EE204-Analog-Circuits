@@ -1,0 +1,25 @@
+.include ald1106.m
+.include ald1107.m
+
+vdd 1 0 4.5v
+vss 9 0 -4.5v
+vin1 4 0 ac sin(0 20mV 1k 0 0)
+vin2 5 0 dc 0V
+
+r 1 7 6.8k
+
+xmt1 2 2 1 1 ald1107
+xmt2 3 2 1 1 ald1107
+
+xm1 2 4 6 9 ald1106
+xm2 3 5 6 9 ald1106
+xm3 6 7 9 9 ald1106
+xm4 7 7 9 9 ald1106
+
+.tran 0.01ms 8ms
+.control
+run
+plot v(3) v(4)-v(5)
+
+.endc
+.end

@@ -1,0 +1,28 @@
+*q1_diffamp
+.include tsmc.txt
+vdd 1 0 5v
+vss 9 0 -5v
+vin1 5 0 ac sin(0 10u 1k 0 0)
+vin2 4 0 dc 0V
+
+mr 7 7 1 1 CMOSP W=100u
+Vm56 8 0 DC 5V
+Vm78 11 0 DC 5V
+mt1 2 2 1 1 CMOSP W=50u
+mt2 3 2 1 1 CMOSP W=50u
+m5 2 8 10 9 CMOSN W=30u
+m6 3 8 12 9 CMOSN W=30u
+m7 10 11 13 9 CMOSN W=1m
+m8 12 11 14 9 CMOSN W=1m
+m1 13 4 6 9 CMOSN W=1m
+m2 14 5 6 9 CMOSN W=1m
+m3 6 7 9 9 CMOSN W=1u
+m4 7 7 9 9 CMOSN W=1u
+
+.tran 0.01ms 20ms
+.control
+run
+plot  v(3)
+
+.endc
+.end

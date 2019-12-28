@@ -1,0 +1,13 @@
+*Ids-Vds and Ids-Vgs of a n-MOSFET
+v 1 0 dc 1V
+v1 1 2 0V
+r 2 0 5k
+
+.dc v 0 10 0.05
+.control
+
+run
+*plotting input and output voltages
+plot i(v1), deriv(i(v1))/0.05
+.endc
+.end

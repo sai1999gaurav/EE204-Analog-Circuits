@@ -1,0 +1,31 @@
+*q1
+.include tsmc.txt
+Vdd 1 0 DC 5V
+M1 2 2 1 1 CMOSP W=10u
+M2 3 2 1 1 CMOSP W=10u
+M3 2 9 4 0 CMOSN W=10u
+M4 3 6 4 0 CMOSN W=10u
+M6 4 7 0 0 CMOSN W=10u
+M7 1 2 7 0 CMOSN W=10u
+M5 7 7 0 0 CMOSN W=10u
+Vgdc 5 9 DC 5V
+Vgdc 6 0 DC 5V
+
+Vin 9 0 sin(0 1m 1k)
+
+.tran 0.05m 10m
+.control
+run
+plot V(3)
+.endc
+.end
+
+
+
+*Vgdc12 0 2 DC 5V
+*Vgdc5 3 0 DC 5V
+*M9 1 1 1 1 CMOSP W=10u
+*M5 1 3 8 0 CMOSN W=10u
+*M7 10 11 8 1 CMOSN W=10u
+*M8 8 8 0 0 CMOSP W = 10u
+*Vgdc 12 0 DC 5V
